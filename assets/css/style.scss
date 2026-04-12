@@ -1,0 +1,43 @@
+---
+---
+/* ── Blog: full width, date naturally below tags ── */
+.card-group .col-lg-6 {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
+
+/* Remove horizontal layout - let footer sit below naturally */
+.card-group .card {
+  flex-direction: column !important;
+  padding-top: 0%;
+}
+
+.card-group .card .card-footer {
+  writing-mode: horizontal-tb !important;
+  text-align: left;
+  font-size: 13px;
+  padding: 8px 35px;
+  background: transparent !important;
+  border-top: none !important;
+}
+
+/* Override dark theme footer background */
+[data-theme="dark"] .card-group .card.border .card-footer {
+  background-color: transparent !important;
+}
+
+/* ── Projects Page ── */
+
+.card-columns {
+  column-count: 2 !important;
+}
+
+/* Mobile: single column */
+@media (max-width: 768px) {
+  .card-columns {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+@import "portfolYOU";

@@ -1,7 +1,7 @@
-- name: Adobe Photoshop
+- name: OpenGL
   percentage: 95
   color: info
 
-- name: Adobe Illustrator
+- name: CUDA
   percentage: 90
   color: success
