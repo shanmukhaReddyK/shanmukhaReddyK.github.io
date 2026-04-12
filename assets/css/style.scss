@@ -26,18 +26,5 @@
   background-color: transparent !important;
 }
 
-/* ── Projects Page ── */
-
-.card-columns {
-  column-count: 2 !important;
-}
-
-/* Mobile: single column */
-@media (max-width: 768px) {
-  .card-columns {
-    grid-template-columns: 1fr !important;
-  }
-}
-
 
 @import "portfolYOU";
