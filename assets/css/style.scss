@@ -26,5 +26,54 @@
   background-color: transparent !important;
 }
 
+/* ── Projects Page ── */
+
+.card-columns {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-auto-rows: 1fr !important;  /* equal height rows */
+  gap: 1.5rem !important;
+  column-count: unset !important;
+}
+
+.card-columns > div {
+  display: flex !important;
+  width: 100% !important;
+}
+
+.card-columns > div > a.project.card {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: 100% !important;   /* fill grid cell */
+}
+
+.card-columns > div > a.project.card > img.card-img-top {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;    /* cover looks better at equal heights */
+  object-position: center !important;
+  border-radius: 15px 15px 0 0 !important;
+}
+
+/* This pushes tags to bottom of card */
+.card-columns > div > a.project.card > div.card-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem !important;
+}
+
+.card-columns > div > a.project.card > div.card-body p:last-child {
+  margin-top: auto !important;  /* pins tags to bottom */
+}
+
+/* Mobile: single column */
+@media (max-width: 768px) {
+  .card-columns {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 
 @import "portfolYOU";
