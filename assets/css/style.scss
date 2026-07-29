@@ -1,24 +1,54 @@
 ---
 ---
-/* ── Blog: full width, date naturally below tags ── */
+/* ── Blog: full width, date positioned top-right ── */
 .card-group .col-lg-6 {
   flex: 0 0 100% !important;
   max-width: 100% !important;
 }
 
-/* Remove horizontal layout - let footer sit below naturally */
+/* Card needs relative positioning so the date can be absolutely placed inside it */
 .card-group .card {
   flex-direction: column !important;
-  padding-top: 0%;
+  padding-top: 0 !important;
+  position: relative !important;
 }
 
+/* Tighten card body spacing */
+.card-group .card .card-body {
+  padding: 0.75rem 1rem !important;
+}
+
+/* Remove default top margin from first element inside card body */
+.card-group .card .card-body > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* Reduce gap between title, excerpt, and tags */
+.card-group .card .card-body h5,
+.card-group .card .card-body p {
+  margin-bottom: 0.5rem !important;
+}
+
+.card-group .card .card-body p:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+/* Date: pulled out of normal flow, placed top-right of the card */
 .card-group .card .card-footer {
+  position: absolute !important;
+  top: 12px !important;
+  right: 20px !important;
+  left: auto !important;
+  bottom: auto !important;
+  width: auto !important;
   writing-mode: horizontal-tb !important;
-  text-align: left;
-  font-size: 13px;
-  padding: 8px 35px;
+  text-align: right;
+  font-size: 12px;
+  padding: 0 !important;
+  margin: 0 !important;
   background: transparent !important;
   border-top: none !important;
+  opacity: 0.7;
 }
 
 /* Override dark theme footer background */
@@ -27,7 +57,6 @@
 }
 
 /* ── Projects Page ── */
-
 .card-columns {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
@@ -74,6 +103,5 @@
     grid-template-columns: 1fr !important;
   }
 }
-
 
 @import "portfolYOU";
