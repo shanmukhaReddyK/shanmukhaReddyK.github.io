@@ -1,59 +1,68 @@
 ---
 ---
-/* ── Blog: full width, date positioned top-right ── */
+
+/* ── Blog: schedule-style card ── */
 .card-group .col-lg-6 {
   flex: 0 0 100% !important;
   max-width: 100% !important;
 }
 
-/* Card needs relative positioning so the date can be absolutely placed inside it */
-.card-group .card {
-  flex-direction: column !important;
-  padding-top: 0 !important;
+.card-group a.post.card {
   position: relative !important;
+  display: block !important;
+  padding: 2.5rem 1.5rem 1.75rem !important;
+  text-align: center !important;
+  border-radius: 6px !important;
 }
 
-/* Tighten card body spacing */
-.card-group .card .card-body {
-  padding: 0.75rem 1rem !important;
+.card-group a.post.card .card-body {
+  padding: 0 !important;
 }
 
-/* Remove default top margin from first element inside card body */
-.card-group .card .card-body > *:first-child {
-  margin-top: 0 !important;
+/* Big centered title, picks up the theme's own link color */
+.card-group a.post.card .card-title {
+  font-size: 1.85rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.85rem !important;
+  color: inherit !important; /* inherits the anchor's link color, like the reference */
 }
 
-/* Reduce gap between title, excerpt, and tags */
-.card-group .card .card-body h5,
-.card-group .card .card-body p {
-  margin-bottom: 0.5rem !important;
+/* Tags row, centered, subtler than solid badges */
+.card-group a.post.card .card-text:first-of-type {
+  margin-bottom: 0.75rem !important;
 }
 
-.card-group .card .card-body p:last-of-type {
+.card-group a.post.card .badge {
+  background: transparent !important;
+  border: 1px solid currentColor !important;
+  color: inherit !important;
+  opacity: 0.55 !important;
+  font-weight: 400 !important;
+  padding: 0.25rem 0.6rem !important;
+  margin: 0 0.2rem !important;
+}
+
+/* Description text, muted */
+.card-group a.post.card .card-text:last-of-type {
+  opacity: 0.75 !important;
   margin-bottom: 0 !important;
 }
 
-/* Date: pulled out of normal flow, placed top-right of the card */
-.card-group .card .card-footer {
+/* Date tucked in the top-left corner, small & subtle */
+.card-group a.post.card .card-footer {
   position: absolute !important;
-  top: 12px !important;
-  right: 20px !important;
-  left: auto !important;
+  top: 10px !important;
+  left: 16px !important;
+  right: auto !important;
   bottom: auto !important;
   width: auto !important;
-  writing-mode: horizontal-tb !important;
-  text-align: right;
-  font-size: 12px;
   padding: 0 !important;
   margin: 0 !important;
   background: transparent !important;
-  border-top: none !important;
-  opacity: 0.7;
-}
-
-/* Override dark theme footer background */
-[data-theme="dark"] .card-group .card.border .card-footer {
-  background-color: transparent !important;
+  border: none !important;
+  font-size: 12px !important;
+  opacity: 0.5 !important;
+  text-align: left !important;
 }
 
 /* ── Projects Page ── */
